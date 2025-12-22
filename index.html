@@ -152,6 +152,99 @@
   </button>
 </div>
 
+
+<!-- ================= FAQ - الأسئلة الشائعة ================= -->
+<section id="faq" class="faq-section" style="padding: 60px 20px; background: #f9f9f9; color: #0a2540; max-width: 900px; margin: 0 auto;">
+  <h2 style="text-align: center; margin-bottom: 40px; font-size: 28px;">الأسئلة الشائعة</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">ما هو تكنو تواليت؟</button>
+    <div class="faq-answer">
+      <p>تكنو تواليت هو منتج مبتكر لتعقيم التواليت وتوفير المياه مع كتم الصوت ومنع تناثر المياه.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">كيف يمكنني طلب المنتج؟</button>
+    <div class="faq-answer">
+      <p>يمكنك طلب المنتج عبر التواصل معنا مباشرة على واتساب من خلال الرابط المتوفر في الصفحة.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">هل المنتج يوفر المياه فعلاً؟</button>
+    <div class="faq-answer">
+      <p>نعم، يوفر حتى 2 لتر مياه في كل استخدام مما يقلل من فاتورة الاستهلاك ويحافظ على البيئة.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: #1f4fd8;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: right;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: #0f2c6e;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #e3f2fd;
+    padding: 0 20px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .faq-answer p {
+    margin: 15px 0;
+    color: #0a2540;
+    font-size: 16px;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px; /* يكفي محتوى الإجابة */
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+</style>
+
+<script>
+  // تفعيل الفتح والإغلاق للأسئلة
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+
+      // إذا كان مفعّل، نغلقه
+      if (faqItem.classList.contains('active')) {
+        faqItem.classList.remove('active');
+      } else {
+        // نغلق كل الأسئلة المفتوحة
+        document.querySelectorAll('.faq-item.active').forEach(item => item.classList.remove('active'));
+        // نفتح السؤال الحالي
+        faqItem.classList.add('active');
+      }
+    });
+  });
+</script>
+
+
 <!-- ================= FOOTER ================= -->
 <footer style="background: #0f2c6e; color: #fff; padding: 30px 0; text-align: center;">
   <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
