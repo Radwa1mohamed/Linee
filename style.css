@@ -505,3 +505,49 @@ footer p:last-child {
     font-size: 16px;
     line-height: 1.6;
 }
+.offers-section {
+  padding: 50px 20px;
+  background: #0a2540cc; /* خلفية شفافة مع لون البراند */
+  border-radius: 18px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.offer-card {
+  background: #1e88e5;
+  color: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(30, 136, 229, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(30, 136, 229, 0.7);
+}
+
+.offer-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+#countdown span {
+  display: inline-block;
+  min-width: 45px;
+  font-size: 28px;
+  background: #ffeb3b;
+  color: #0a2540;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 0 5px;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+}

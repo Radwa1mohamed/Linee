@@ -110,6 +110,88 @@
 
 <a href="https://wa.me/201007359722" class="whatsapp-btn" target="_blank" aria-label="التواصل عبر واتساب">💬</a>
 
+
+
+<section class="offers-section" aria-label="عروض خاصة">
+  <h2 style="text-align: center; margin-bottom: 10px; color: #fff;">
+    عروض خاصة - الحقها الآن
+  </h2>
+  <div id="countdown" style="text-align: center; color: #ffeb3b; font-weight: 700; font-size: 24px; margin-bottom: 30px;">
+    <span id="days">00</span> أيام
+    <span id="hours">00</span> ساعة
+    <span id="minutes">00</span> دقيقة
+    <span id="seconds">00</span> ثانية
+  </div>
+
+  <div class="offers-grid">
+    <!-- نفس الكاردز للعروض هنا -->
+  </div>
+</section>
+
+<section class="offers-section" aria-label="عروض خاصة">
+  <div class="offers-grid">
+    <div class="offer-card">
+      <div class="offer-icon">🎁</div>
+      <h3>هدية مجانية</h3>
+      <p>احصل على عبوة معقمة مجانية مع كل طلب تكنو تواليت.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-icon">💸</div>
+      <h3>خصم 15%</h3>
+      <p>خصم خاص عند طلبك الأول من خلال الموقع.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-icon">🚚</div>
+      <h3>شحن مجاني</h3>
+      <p>شحن مجاني داخل جميع أنحاء القاهرة.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-icon">🛡️</div>
+      <h3>ضمان جودة</h3>
+      <p>ضمان استبدال المنتج في حال وجود أي عيوب.</p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  // مدة العداد بالدقائق (3 أيام = 3 * 24 * 60 = 4320 دقيقة)
+  const countdownDurationMinutes = 4320;
+
+  // نبدأ من الوقت الحالي
+  let startTime = new Date().getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+
+    // الزمن المنقضي منذ البداية (بالملي ثانية)
+    let elapsed = now - startTime;
+
+    // إذا الوقت تعدى مدة العداد (3 أيام)، نعيد ضبط البداية
+    if (elapsed >= countdownDurationMinutes * 60 * 1000) {
+      startTime = now;
+      elapsed = 0;
+    }
+
+    // الزمن المتبقي
+    const remaining = countdownDurationMinutes * 60 * 1000 - elapsed;
+
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, "0");
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+
 <!-- ================= TESTIMONIAL CAROUSEL ================= -->
 <div id="testimonialCarousel" class="carousel slide mx-auto my-5" data-bs-ride="carousel" style="max-width: 500px;">
   <!-- Indicators -->
@@ -243,6 +325,7 @@
     });
   });
 </script>
+
 
 
 <!-- ================= FOOTER ================= -->
