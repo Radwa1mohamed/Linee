@@ -28,6 +28,7 @@ body {
 
 /* ================= CONTAINER ================= */
 .container {
+    
     width: 90%;
     max-width: 1200px;
     margin: auto;
@@ -35,9 +36,56 @@ body {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    
+    direction: ltr; 
+    padding: 10px 20px ;
 }
+/* ============ إعدادات الموبايل (الحل النهائي) ============ */
+@media (max-width: 768px) {
+    
+    /* 1. ضبط الحاوية لتسمح بالتحكم الحر */
+    .container {
+        position: relative; /* ضروري عشان العناصر اللي جواه تتحرك براحتها */
+    }
 
+    /* 2. إخفاء روابط القائمة (الرئيسية، من نحن..) عشان متعملش زحمة */
+    nav {
+        display: none; /* إخفاء مبدئي */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0056b3; /* لون الخلفية */
+        z-index: 1000;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* كلاس لإظهار القائمة لما نضغط (بتحتاج جافاسكريبت) */
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        display: block; /* ضمان إن كل رابط في سطر لوحده */
+    }
+
+    /* 3. تنسيق زر القائمة (الهمبرجر) ليكون في أقصى اليمين إجبارياً */
+    .menu-toggle {
+        display: block !important; /* تأكيد الظهور */
+        
+        position: absolute; /* الحركة الحرة */
+        right: 0px;        /* يلزق في اليمين تماماً */
+        top: 50%;          /* ينزل لنص الهيدر */
+        transform: translateY(-50%); /* يظبط النص بالمللي */
+        
+        cursor: pointer;
+        color: #fff;
+        font-size: 30px;
+        z-index: 1001;
+    }
+}
 /* ================= LOGO ================= */
 .logo {
     display: flex;
@@ -47,8 +95,8 @@ body {
 }
 
 .logo img {
-    width: 44px;
-    height: 44px;
+    width: 54px;
+    height: 54px;
     object-fit: contain;
     border-radius: 50%;
     transition: transform 0.3s ease;
@@ -100,7 +148,9 @@ nav ul li a:focus {
     cursor: pointer;
     background: none;
     border: none;
+    
 }
+
 
 /* ================= FEATURES ================= */
 .features {
