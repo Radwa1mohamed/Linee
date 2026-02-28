@@ -1272,8 +1272,7 @@ tbody tr:hover td {
         padding: 15px !important;
         z-index: 10000;
     }
-}
-<<<<<<< HEAD
+} 
 
 /* تصغير الجدول على الشاشات الصغيرة بدون تغيير الشكل */
 @media screen and (max-width: 768px) {
@@ -1316,5 +1315,3 @@ tbody tr:hover td {
     font-size: 1.3rem;        /* تصغير اللون السماوي ليتناسب مع النص */
   }
 }
-=======
->>>>>>> 75e080ec20a0f7b2583e7830dc9fece27f4719ad
