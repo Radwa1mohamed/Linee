@@ -1090,6 +1090,119 @@ tbody tr:hover td {
 
 /* ================= التعديلات النهائية للموبايل والجدول ================= */
 @media (max-width: 768px) {
+.comparison1 {
+  padding: 100px 20px;
+  direction: rtl;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.comparison-container1 {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.comparison-container1 h2 {
+  text-align: center;
+  font-size: 38px;
+  color: #1e3a8a;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+/* الجدول ككتلة بارزة (The 3D Block) */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff; /* الخلفية البيضاء للجدول */
+  border-radius: 40px; /* زوايا منحوتة */
+  
+  /* أهم جزء: الظلال التي تخلق البروز */
+  box-shadow: 
+    /* ظل سفلي عميق يعطي ارتفاعاً عن الصفحة */
+    0 30px 60px rgba(0, 0, 0, 0.12), 
+    /* ظل جانبي ناعم */
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    /* خط إضاءة علوي أبيض ليعطي إيحاء بالانعكاس على الحافة */
+    inset 0 4px 0 rgba(255, 255, 255, 1);
+    
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+/* تنسيق الرأس */
+thead th {
+  padding: 35px 20px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid #edf2f7;
+}
+
+/* تمييز عمود "تكنو تواليت" كأنه جزء غائر أو بارز داخل الجدول */
+th.highlight-cell, 
+td:nth-child(2) {
+  background: #f0f7ff !important; /* لون أزرق باهت جداً للتمييز */
+  border-left: 1px solid rgba(37, 99, 235, 0.1);
+  border-right: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+th.highlight-cell {
+  color: #2563eb;
+  font-size: 22px;
+}
+
+/* الصفوف والخلايا */
+tbody td {
+  padding: 25px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+/* عمود الميزة الأول */
+tbody td:first-child {
+  text-align: right;
+  font-weight: 700;
+  color: #0f172a;
+  padding-right: 40px;
+}
+
+/* الأيقونات بشكل بارز (Neumorphic Style Icons) */
+.yes span {
+  background: #ffffff;
+  color: #16a34a;
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px; /* زوايا مربعة ناعمة */
+  font-size: 20px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.05), -4px -4px 10px rgba(255,255,255,0.8);
+}
+
+.no span {
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+/* تأثير عند الوقوف على الصف لإعطائه حياة */
+tbody tr:hover td {
+  background-color: #f1de82;
+}
+
+/* تأثير التوهج المحيط بالجدول */
+.comparison-container1 {
+  filter: drop-shadow(0 0 30px rgba(37, 99, 235, 0.15));
+} 
+
+
+
+  } 
+@media (max-width: 768px) {
 
     /* 1. الكروت: جعلها تظهر 2 بجانب بعض */
     .features2-grid {
@@ -1160,6 +1273,7 @@ tbody tr:hover td {
         z-index: 10000;
     }
 }
+<<<<<<< HEAD
 
 /* تصغير الجدول على الشاشات الصغيرة بدون تغيير الشكل */
 @media screen and (max-width: 768px) {
@@ -1202,3 +1316,5 @@ tbody tr:hover td {
     font-size: 1.3rem;        /* تصغير اللون السماوي ليتناسب مع النص */
   }
 }
+=======
+>>>>>>> 75e080ec20a0f7b2583e7830dc9fece27f4719ad
