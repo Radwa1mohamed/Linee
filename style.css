@@ -924,6 +924,8 @@ tbody tr:hover td {
   box-shadow: 0 8px 25px rgba(47,85,212,0.5);
 }
 
+
+
 /* ===== Keyframes للأنيميشن ===== */
 @keyframes fadeUp {
   from {
@@ -935,10 +937,54 @@ tbody tr:hover td {
     transform: translateY(0);
   }
 }
+
+.site-footer {
+  background: #0f2c6e; /* لون متناسق مع الموقع */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #00d2ff; /* لون لينكدان سماوي */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
 /* لو فيه أكتر من 4 كروت ممكن تزودها بنفس الطريقة */
 
     /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+  .container {
+    flex-direction: row;       /* خلي العناصر على صف واحد */
+    justify-content: flex-start; /* يبدأ من الشمال */
+    gap: 12px;                  /* مسافة بسيطة بين اللوجو والاسم */
+  }
+
+  .logo {
+    order: 0;                  /* اللوجو أول عنصر */
+  }
+
+  .logo h1 {
+    order: 1;                  /* الاسم بعد اللوجو */
+    margin-right: 8px;          /* مسافة بين اللوجو والاسم */
+  }
+
+  .menu-toggle {
+    order: 2;                  /* زر القائمة ييجي بعد الاسم */
+    margin-left: auto;         /* يدفعه يمين الشاشة */
+  }
+
+  nav.active {
+    left: 0;                   /* شريط التنقل يبقى من الشمال */
+    right: unset;               /* يلغي الوضع السابق */
+  }
+
 
     /* MENU TOGGLE (show on mobile) */
     .menu-toggle {
@@ -968,10 +1014,7 @@ tbody tr:hover td {
         overflow: hidden;
     }
 
-    /* NAVIGATION active state (when menu open) */
-    nav.active {
-        display: flex;
-    }
+  
 
     nav ul {
         flex-direction: column;
@@ -1003,9 +1046,7 @@ tbody tr:hover td {
         outline: none;
     }
 
-    .logo h1 {
-        font-size: 22px;
-    }
+   
 
     .intro-container {
         grid-template-columns: 1fr;
@@ -1317,3 +1358,4 @@ tbody tr:hover td {
     font-size: 1.3rem;        /* تصغير اللون السماوي ليتناسب مع النص */
   }
 }
+
