@@ -1160,3 +1160,45 @@ tbody tr:hover td {
         z-index: 10000;
     }
 }
+
+/* تصغير الجدول على الشاشات الصغيرة بدون تغيير الشكل */
+@media screen and (max-width: 768px) {
+  .comparison-container1 table {
+    transform: scale(0.85);   /* تصغير الجدول بنسبة 85% */
+    transform-origin: top right; /* النقطة اللي يبدأ منها التصغير */
+  }
+
+  .comparison-container1 {
+    overflow-x: auto; /* لو الجدول كبير شوية، يسمح بالتمرير البسيط */
+  }
+
+  table th, table td {
+    padding: 15px 10px; /* تقليل الحشوات داخل الخلايا */
+    font-size: 14px;    /* تصغير الخطوط لتناسب الموبايل */
+  }
+
+  .titan-text {
+    font-size: 1.5rem; /* تصغير عنوان الجدول */
+  }
+}
+
+/* تصغير البلوكة والعنوان على الموبايل */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    width: fit-content;       /* يبقى ضيق حوالين النص */
+    padding: 3px 10px;        /* تقليل الحشوات الداخلية */
+    margin: 15px auto;        /* تقليل المسافة العلوية والسفلية */
+    border-radius: 30px;      /* أصغر شوية عشان يتناسب مع الحجم */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* ظل أخف */
+  }
+
+  .titan-text {
+    font-size: 1.3rem;        /* تصغير حجم العنوان */
+    padding-top: 20px;        /* تقليل البادينج العلوي */
+    line-height: 1.1;
+  }
+
+  .accent {
+    font-size: 1.3rem;        /* تصغير اللون السماوي ليتناسب مع النص */
+  }
+}
